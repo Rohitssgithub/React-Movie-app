@@ -1,0 +1,19 @@
+.card-link {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+.card-link:hover{
+    color: white;
+}
+.card-link img {
+    height: 350px;
+    width: 80%;
+}
+
+.movie-card {
+    text-align: center;
+}
+.movie-card-info{
+    margin-top: 10px;
+}

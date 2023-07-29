@@ -1,0 +1,125 @@
+.single-movie-poster {
+    height: 450px;
+    margin-top: 50px;
+    position: relative;
+    z-index: -1;
+    margin-top: 80px;
+}
+
+
+.single-movie-poster img {
+    height: 100%;
+    width: 100%;
+}
+
+.single-movie-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    color: white;
+    padding: 10px 10px 75px 10px;
+}
+
+.roundeds {
+    border-radius: 15px !important;
+    overflow: hidden;
+}
+
+
+.single-movie-backimage img {
+    height: 100%;
+    width: 100%;
+}
+
+.movie-details img {
+    height: 250px;
+    width: 150px;
+}
+
+.single-movie-cast h1 {
+    color: white !important;
+}
+
+.movie-details {
+    display: flex;
+    gap: 15px;
+}
+
+
+.info-div h3 {
+    color: slateblue;
+    margin: 20px 0;
+}
+
+.movie-runtime {
+    padding: 5px;
+    background-color: rgb(83, 29, 29);
+}
+
+.info-div p {
+    margin-top: 10px;
+}
+
+.movie-genres {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1025px) {
+    .single-movie-info {
+        width: 100%;
+        padding: 25px !important;
+    }
+
+    .movie-details img {
+        height: 150px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .single-movie-info {
+        width: 100%;
+        padding: 25px !important;
+        box-sizing: border-box;
+    }
+
+    .movie-details img {
+        height: 150px;
+        width: 100px;
+    }
+
+    .single-movie-info p {
+        font-size: 12px;
+    }
+
+    .info-div h2,
+    h3 {
+        font-size: 18px;
+    }
+
+    .info-div h3 {
+        margin: 10px 0;
+    }
+    .info-div p {
+        margin-top: 5px;
+    }
+
+    .single-movie-poster {
+        padding: 18px !important;
+    }
+
+    .movie-runtime {
+        padding: 3px;
+        background-color: rgb(83, 29, 29);
+        font-size: 10px;
+        display: block;
+        width: fit-content;
+    }
+
+    .movie-genres {
+        font-size: 10px;
+        margin-left: 0px;
+    }
+}
