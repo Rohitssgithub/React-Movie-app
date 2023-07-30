@@ -45,6 +45,7 @@ const SingleMovie = () => {
             {loading && <Loading />}
             <div className='container single-movie-poster p-0'>
                 <img src={`https://image.tmdb.org/t/p/w500/${singleMovies.backdrop_path}`} alt="" />
+                <div className='overlay-div '></div>
                 <div className='single-movie-info'>
                     <div className='movie-details '>
                         <div>

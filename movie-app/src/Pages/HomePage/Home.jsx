@@ -81,13 +81,11 @@ const Home = () => {
                     }
                 </div>
             </div>
-            {/* {loading && <Loading />} */}
-
-            {/* {
+            {
                 visible ?
                     <BsFillArrowUpCircleFill className='scroll-top-icon' onClick={gotoTop} />
                     : ''
-            } */}
+            }
         </>
     )
 }
