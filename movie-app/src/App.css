@@ -11,7 +11,8 @@ p {
     margin: 0;
     padding: 0;
 }
-nav{
+
+nav {
     position: fixed !important;
     top: 0;
     left: 0;
@@ -26,12 +27,17 @@ nav{
 .active {
     background-color: red;
 }
-.movies-container{
+
+.movies-container {
     margin-top: 80px;
 }
 
-@media screen and (max-width: 480px) {
+.navbar-brand.active {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
 
+@media screen and (max-width: 780px) {
 
     .active {
         background: none;

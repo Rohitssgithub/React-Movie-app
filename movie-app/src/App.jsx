@@ -1,10 +1,6 @@
 import React from 'react'
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";
 import Navbar from './Components/Navbar';
 import Home from './Pages/HomePage/Home';
 import TopRatedPage from './Pages/TopRatedPage/TopRatedPage';
@@ -18,6 +14,7 @@ const App = () => {
         <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/popular' element={<Home />} />
           <Route path='/toprated' element={<TopRatedPage />} />
           <Route path='/upcoming' element={<UpcomingPage />} />
           <Route path='/singleMovie/:id' element={<SingleMovie />} />

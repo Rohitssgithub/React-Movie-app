@@ -7,15 +7,10 @@ import { useParams } from 'react-router-dom';
 import Cast from '../../Components/Cast/Cast';
 import Loading from '../../Components/Loader/Loading';
 const SingleMovie = () => {
-
     let { id } = useParams()
-
-
     let dispatch = useDispatch();
-
     const { singleMovies, cast, genres, loading } = useSelector((state) => state.movies)
     console.log(genres)
-
 
     useEffect(() => {
         dispatch(singleMovie(id))
@@ -57,11 +52,14 @@ const SingleMovie = () => {
                 <h1>Cast</h1>
                 <div className='row'>
                     {cast &&
-                        cast.map((ele) => {
+                        cast.map((ele, index) => {
                             return (
-                                <div className='col-lg-2 col-md-3 cast-div' key={ele.id}>
-                                    <Cast ele={ele}></Cast>
-                                </div>
+                                index <= 5 ?
+                                    <div className='col-lg-2 col-md-3 cast-div' key={ele.id}>
+                                        <Cast ele={ele}></Cast>
+                                    </div>
+                                    :
+                                    ''
                             )
                         })
                     }

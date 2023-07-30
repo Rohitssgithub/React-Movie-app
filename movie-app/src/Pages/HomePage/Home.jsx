@@ -13,15 +13,14 @@ const Home = () => {
 
     const { allMovie, searchData, loading } = useSelector((state) => state.movies)
 
-    // console.log(allMovie)
-
 
     const [page, setPage] = useState(1);
-    console.log(page)
     const handleScroll = () => {
         if (
-            window.innerHeight + document.documentElement.scrollTop ===
-            document.documentElement.offsetHeight
+            // window.innerHeight + document.documentElement.scrollTop ===
+            // document.documentElement.offsetHeight
+            window.innerHeight + document.documentElement.scrollTop + 1 >=
+            document.documentElement.scrollHeight
         ) {
             if (!loading) {
                 setPage((prevPage) => prevPage + 1);
@@ -30,22 +29,14 @@ const Home = () => {
     };
 
 
-    // const loadNextPage = () => {
-    //     setPage((prevPage) => prevPage + 1);
-    // };
-
-
-
     useEffect(() => {
-        console.log(page + 'called')
         dispatch(allMovies(page))
     }, [page])
 
     useEffect(() => {
-        console.log(page + 'in')
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    });
+    }, []);
 
     const toggleVisible = () => {
         const scrolled = document.documentElement.scrollTop;
@@ -69,23 +60,24 @@ const Home = () => {
         <>
             <div className='container movies-container'>
                 <div className='row'>
-                    {loading ? <Loading /> :
-                        searchData.length > 0 ?
-                            searchData.map((movie) => {
-                                return (
-                                    <div className='col-lg-3 col-md-6' key={movie.id}>
-                                        <Movie movie={movie}></Movie>
-                                    </div>
-                                )
-                            })
-                            :
-                            allMovie.map((movie) => {
-                                return (
-                                    <div className='col-lg-3 col-md-6 sdkmk' key={movie.id}>
-                                        <Movie movie={movie}></Movie>
-                                    </div>
-                                )
-                            })
+                    {
+                        loading ? <Loading /> :
+                            searchData.length > 0 ?
+                                searchData.map((movie) => {
+                                    return (
+                                        <div className='col-lg-3 col-md-6' key={movie.id}>
+                                            <Movie movie={movie}></Movie>
+                                        </div>
+                                    )
+                                })
+                                :
+                                allMovie.map((movie) => {
+                                    return (
+                                        <div className='col-lg-3 col-md-6 sdkmk' key={movie.id}>
+                                            <Movie movie={movie}></Movie>
+                                        </div>
+                                    )
+                                })
                     }
                 </div>
             </div>

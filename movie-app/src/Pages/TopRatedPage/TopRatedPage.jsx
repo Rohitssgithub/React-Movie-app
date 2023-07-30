@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect ,useState} from 'react';
+import { useEffect, useState } from 'react';
 import { topRatedMovies } from '../../Reducer/MovieReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import Movie from '../../Components/Movie/Movie';
@@ -13,8 +13,8 @@ const TopRatedPage = () => {
   const [page, setPage] = useState(1);
   const handleScroll = () => {
     if (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
+      window.innerHeight + document.documentElement.scrollTop + 1 >=
+      document.documentElement.scrollHeight
     ) {
       if (!loading) {
         setPage((prevPage) => prevPage + 1);
@@ -23,14 +23,16 @@ const TopRatedPage = () => {
   };
 
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  })
 
   useEffect(() => {
     dispatch(topRatedMovies(page))
   }, [page])
+
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [])
   return (
     <>
       {loading && <Loading />}

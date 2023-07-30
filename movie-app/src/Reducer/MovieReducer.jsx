@@ -47,7 +47,7 @@ export const topRatedMovies = createAsyncThunk('topRatedMovies/get', async (thun
 
 export const upComingMovies = createAsyncThunk('upComingMovies/get', async (thunkAPI) => {
     try {
-        const data = await axios.get("https://api.themoviedb.org/3/movie/upcoming?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=1", thunkAPI, { withCredentials: true })
+        const data = await axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${thunkAPI}`, thunkAPI, { withCredentials: true })
         return data.data.results
     }
     catch (err) {
